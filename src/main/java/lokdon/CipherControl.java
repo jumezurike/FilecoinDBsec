@@ -108,21 +108,6 @@ public class CipherControl {
      * @param data payload to be encrypted
      * @return
      */
-    public String encryptData(String data){
-        if(data.length()<=256)
-            return encryptGenericData(data);
-        StringBuilder builder=new StringBuilder();
-        for(int i=0;i<data.length();i+=256){
-            String part=data.substring(i, Math.min((i + 256), data.length()));
-            if(i==0){
-                builder.append(new CipherControl().verifiedEncrypt(part));
-            }else{
-                builder.append("ዐ");
-                builder.append(new CipherControl().verifiedEncrypt(part));
-            }
-        }
-        return builder.toString();
-    }
 
     private String verifiedEncrypt(String part) {
         do{

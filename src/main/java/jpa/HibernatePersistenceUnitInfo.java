@@ -1,4 +1,4 @@
-package examples;
+package jpa;
 
 import javax.persistence.SharedCacheMode;
 import javax.persistence.ValidationMode;

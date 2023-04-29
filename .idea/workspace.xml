@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78284d90-b28e-44d8-9c27-1cd0fcf6f244" name="Changes" comment="" />
+    <list default="true" id="78284d90-b28e-44d8-9c27-1cd0fcf6f244" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/DataShield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/DataShield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/examples/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/examples/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/EncryptedStringType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/EncryptedStringType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/HibernatePersistenceUnitInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/HibernatePersistenceUnitInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/JpaEntityManagerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/JpaEntityManagerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lokdon/CipherControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lokdon/CipherControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/providers/Encrypted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/providers/Encrypted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/providers/JPAProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/providers/JPAProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/EncryptionLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/EncryptionLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/EncryptionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/EncryptionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/KMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/KMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EntityTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,19 +34,59 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2OTEqgy3zuq2M9bgEQVRSHjt6Gh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nahom/IdeaProjects/DataShield/src/main/java&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nahom\IdeaProjects\DataShield\src\main\java" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,8 +95,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681576368045</updated>
+      <workItem from="1681576369769" duration="651000" />
+      <workItem from="1681587862729" duration="57000" />
+      <workItem from="1682631597885" duration="10977000" />
+      <workItem from="1682642864594" duration="502000" />
+      <workItem from="1682643401168" duration="4495000" />
+      <workItem from="1682655608141" duration="9661000" />
+      <workItem from="1682717471972" duration="10545000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -1,4 +1,4 @@
-package examples;
+package jpa;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import java.util.Arrays;
@@ -11,17 +11,25 @@ import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.spi.PersistenceUnitInfo;
+
+import jpa.HibernatePersistenceUnitInfo;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;
 import org.hibernate.jpa.boot.internal.PersistenceUnitInfoDescriptor;
 
 public class JpaEntityManagerFactory {
     private String DB_URL = "jdbc:mysql://localhost:3306/mock3";
-    private String DB_USER_NAME = "root";
+    private String DB_USER_NAME = "";
     private String DB_PASSWORD = "";
     private Class[] entityClasses;
 
     public JpaEntityManagerFactory(Class[] entityClasses) {
         this.entityClasses = entityClasses;
+    }
+    public JpaEntityManagerFactory(Class[] entityClasses, String DB_URL, String DB_USER_NAME, String DB_PASSWORD) {
+        this.entityClasses = entityClasses;
+        this.DB_URL = DB_URL;
+        this.DB_USER_NAME = DB_USER_NAME;
+        this.DB_PASSWORD = DB_PASSWORD;
     }
 
     public EntityManager getEntityManager() {

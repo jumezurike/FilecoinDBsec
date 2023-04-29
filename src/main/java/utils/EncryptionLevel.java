@@ -1,6 +1,6 @@
 package utils;
 
-public enum LokDon {
+public enum EncryptionLevel {
     PRIVATE,
     CONFIDENTIAL,
     SECRET,
