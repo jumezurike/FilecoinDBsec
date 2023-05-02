@@ -14,9 +14,9 @@ public class FileEncryption {
        String key="12345678_long_key";
        int[] pin={1,2,3,4};
        Scanner scanner=new Scanner(System.in);
-       System.out.println("Input File:");
+       //System.out.println("Input File:");
        sampleFile=scanner.nextLine();
-       System.out.println("Output File: ");
+       //System.out.println("Output File: ");
        outFile=scanner.nextLine();
        try{
            File input=new File(sampleFile);
@@ -75,10 +75,10 @@ public class FileEncryption {
         String cipher=getCompositeKey(password,pin,inputBytes.length);
         byte[] cipherBytes=cipher.getBytes(StandardCharsets.UTF_8);
         byte[] outputBytes=CipherControl.getInstance().xorWithKey(inputBytes,cipherBytes);
-        System.out.println("Encryption completed, writing to file");
+        //System.out.println("Encryption completed, writing to file");
         FileOutputStream fos=new FileOutputStream(output);
         fos.write(outputBytes);
-        System.out.println("Write Complete, file saved to: "+output.getAbsolutePath());
+        //System.out.println("Write Complete, file saved to: "+output.getAbsolutePath());
     }
     public static void decryptFile(File input, File output,String password, int[] pin) throws Exception {
         FileReader f=new FileReader(input);
@@ -89,9 +89,9 @@ public class FileEncryption {
         String cipher=getCompositeKey(password,pin,inputBytes.length);
         byte[] cipherBytes=cipher.getBytes(StandardCharsets.UTF_8);
         byte[] outputBytes=CipherControl.getInstance().xorWithKey(inputBytes,cipherBytes);
-        System.out.println("Decryption completed, writing to file");
+        //System.out.println("Decryption completed, writing to file");
         FileOutputStream fos=new FileOutputStream(output);
         fos.write(outputBytes);
-        System.out.println("Write Complete, file saved to: "+output.getAbsolutePath());
+        //System.out.println("Write Complete, file saved to: "+output.getAbsolutePath());
     }
 }

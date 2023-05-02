@@ -15,11 +15,14 @@ import javax.persistence.spi.PersistenceUnitInfo;
 import jpa.HibernatePersistenceUnitInfo;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;
 import org.hibernate.jpa.boot.internal.PersistenceUnitInfoDescriptor;
+import utils.Constants;
+import utils.DB_TYPE;
 
 public class JpaEntityManagerFactory {
     private String DB_URL = "jdbc:mysql://localhost:3306/mock3";
     private String DB_USER_NAME = "";
     private String DB_PASSWORD = "";
+    private DB_TYPE db_type;
     private Class[] entityClasses;
 
     public JpaEntityManagerFactory(Class[] entityClasses) {
@@ -30,6 +33,14 @@ public class JpaEntityManagerFactory {
         this.DB_URL = DB_URL;
         this.DB_USER_NAME = DB_USER_NAME;
         this.DB_PASSWORD = DB_PASSWORD;
+    }
+
+    public JpaEntityManagerFactory(Class[] entityClasses, String DB_URL, String DB_USER_NAME, String DB_PASSWORD, DB_TYPE db_type) {
+        this.entityClasses = entityClasses;
+        this.DB_URL = DB_URL;
+        this.DB_USER_NAME = DB_USER_NAME;
+        this.DB_PASSWORD = DB_PASSWORD;
+        this.db_type = db_type;
     }
 
     public EntityManager getEntityManager() {
@@ -58,22 +69,12 @@ public class JpaEntityManagerFactory {
     }
 
     protected Properties getProperties() {
-        Properties properties = new Properties();
-        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        properties.put("hibernate.id.new_generator_mappings", false);
-        properties.put("hibernate.connection.datasource", getMysqlDataSource());
+        Properties properties = Constants.getDBProperties(db_type);
+        properties.put("hibernate.connection.datasource", Constants.getDataSource(db_type, DB_URL, DB_USER_NAME, DB_PASSWORD));
         return properties;
     }
 
     protected Class[] getEntities() {
         return entityClasses;
-    }
-
-    protected DataSource getMysqlDataSource() {
-        MysqlDataSource mysqlDataSource = new MysqlDataSource();
-        mysqlDataSource.setURL(DB_URL);
-        mysqlDataSource.setUser(DB_USER_NAME);
-        mysqlDataSource.setPassword(DB_PASSWORD);
-        return mysqlDataSource;
     }
 }

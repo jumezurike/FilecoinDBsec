@@ -298,7 +298,7 @@ public class KnightSolver {
         for (int i = 0; i < width * height; i++) {
             KnightCell c = board[i];// + i;
             knightMoveArray[i]=c.getSelectionStep();
-//            //System.out.print(+c.getSelectionStep() + "");
+//            ////System.out.print(+c.getSelectionStep() + "");
 ////            output << c.getSelectionStep();
 ////
 //            n++;
@@ -307,7 +307,7 @@ public class KnightSolver {
 //                DebugUtil.printLog("   ");
 //                n = 0;
 //            } else {
-//                //System.out.print(" ");
+//                ////System.out.print(" ");
 //            }
 
         }

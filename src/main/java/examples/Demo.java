@@ -4,6 +4,7 @@ import jpa.EncryptedStringType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import providers.Encrypted;
+import utils.Constants;
 
 import javax.persistence.*;
 
@@ -13,7 +14,7 @@ import javax.persistence.*;
 public class Demo {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;

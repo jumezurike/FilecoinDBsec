@@ -1,0 +1,28 @@
+stages:
+  - build
+  - test
+  - release
+build-java-project:
+  stage: build
+  tags:
+    - master
+  script:
+    - mvn compile package
+  artifacts:
+    paths:
+      - /home/gitlab-runner/
+mvn-test:
+  stage: test
+  tags:
+    - master
+  script:
+    - mvn test
+  artifacts:
+    paths:
+      - /home/gitlab-runner/
+release-java-project:
+  stage: release
+  tags:
+    - master
+  script:
+    - 'mvn deploy -s ci_settings.xml -DuniqueVersion=false'

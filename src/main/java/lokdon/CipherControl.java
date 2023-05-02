@@ -1,11 +1,10 @@
-package lokdon;//package cipher;
+package lokdon;
 //import py4j.GatewayServer;
 
+import javax.sound.sampled.AudioFormat;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.Random;
+import java.util.*;
 //import java.util.StringTokenizer;
 
 //import cipher.*;
@@ -25,6 +24,7 @@ public class CipherControl {
     private int MAX_KNIGHT_TOUR = 5;
     private final int MAX_MPIN_TEMP_TOUR = 5;
     private final int ASDwead = 256;
+    private final char UNI_GLO= 'ʔ';
     private final int KNIGHT_MATRIX_WIDTH = 16;
     private final int KNIGHT_MATRIX_HEIGHT = 16;
     private ArrayList<int[]> moveNumberList = null;
@@ -55,12 +55,12 @@ public class CipherControl {
     }
 
     private static void printBinary(byte[] list) {
-        /*for (int i = 0; i < list.length; i++) {
-            *//*if (i == list.length - 1) {
+        for (int i = 0; i < list.length; i++) {
+            if (i == list.length - 1) {
                 //System.out.print(list[i]);
-            } else
-                //System.out.print(list[i] + ",");*//*
-        }*/
+            } else{}
+                //System.out.print(list[i] + ",");
+        }
     }
 
     public static byte[] xorWithKey(byte[] input, byte[] secret) {
@@ -101,24 +101,6 @@ public class CipherControl {
             //System.out.println("Night Moves:"+knightMoveNumbers[i]);
         }
         return knightMoveNumbers;
-    }
-
-    /***
-     * Suitable method for large text or json-payload encryption
-     * @param data payload to be encrypted
-     * @return
-     */
-
-    private String verifiedEncrypt(String part) {
-        do{
-            String cipher=new CipherControl().encryptGenericData(part);
-            if(decryptGenericData(cipher).equals(part))
-                return cipher;
-        }while(true);
-    }
-
-    public String decryptData(String cipherData){
-        return decryptGenericData(cipherData);
     }
 
     /*
@@ -234,7 +216,7 @@ public class CipherControl {
         }
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] currentCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            //this.printCipherTemplate(currentCipherChars);
+            ////this.printCipherTemplate(currentCipherChars);
             this.createCipherTemplateStore(currentCipherChars);
         }
         /*
@@ -550,7 +532,7 @@ public class CipherControl {
         // Creating new character array using knight moves and store in ciperTemplateStore
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] currentCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            this.printCipherTemplate(currentCipherChars);
+            //this.printCipherTemplate(currentCipherChars);
             this.createCipherTemplateStore(currentCipherChars);
         }
         /*
@@ -828,7 +810,7 @@ public class CipherControl {
         // Creating new character array using knight moves and store in ciperTemplateStore
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] genericStringCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            this.printCipherTemplate(genericStringCipherChars);
+            //this.printCipherTemplate(genericStringCipherChars);
             this.createCipherTemplateStore(genericStringCipherChars);
         }
         /*
@@ -900,81 +882,85 @@ public class CipherControl {
     The function would receive a string data and will return encoded M2 string
     */
     public String encryptGenericData(String genericString) {
-        char[] genericStringToArray = genericString.toCharArray();
-        //create random number list of number of moves of night
-        this.generateKnightMovePositions(gjfghj); // M1 and M2 only
-        // now initialize array list of walks and store in knightWalkNumberList
-        this.createKnightWalkNumberStore();
-        //////System.out.println("Total Knight Walks for Encrypting Generic String = "+ this.knightWalkNumberList.size());
-        if (this.cipherTemplateList != null) {
-            this.cipherTemplateList.clear();
-        }
-        // Creating new character array using knight moves and store in ciperTemplateStore
-        for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
-            char[] genericStringCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            this.printCipherTemplate(genericStringCipherChars);
-            this.createCipherTemplateStore(genericStringCipherChars);
-        }
+        try {
+            char[] genericStringToArray = genericString.toCharArray();
+            //create random number list of number of moves of night
+            this.generateKnightMovePositions(2); // M1 and M2 only
+            // now initialize array list of walks and store in knightWalkNumberList
+            this.createKnightWalkNumberStore();
+            //////System.out.println("Total Knight Walks for Encrypting Generic String = "+ this.knightWalkNumberList.size());
+            if (this.cipherTemplateList != null) {
+                this.cipherTemplateList.clear();
+            }
+            // Creating new character array using knight moves and store in ciperTemplateStore
+            for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
+                char[] genericStringCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
+                //this.printCipherTemplate(genericStringCipherChars);
+                this.createCipherTemplateStore(genericStringCipherChars);
+            }
         /*
         we have now
         1. Knight move positions Array
         2. Array list of cipher chars based on knight moves
         3. Knight moves array list, based on knight move positions.
         */
-        // find the indices of our input data string in M1 and M2 and store in an array
-        // we will add indices of our data chars and will finally find new chars from M2 as ciper of our data
+            // find the indices of our input data string in M1 and M2 and store in an array
+            // we will add indices of our data chars and will finally find new chars from M2 as ciper of our data
 
-        int[] fixedDataCharsFromM1Index = new int[genericStringToArray.length];
-        int[] originalDataCharsM2Index = new int[genericStringToArray.length];
-        // place holders
-        StringBuffer cipherBuffer = new StringBuffer();
-        for (int index = 0; index < this.cipherTemplateList.size(); index++) {
-            //////System.out.println(" in M"+index+" orignal index of generic Data chars is as : ");
-            if (index == 0) {
-                // take index from Knight tour matrix of M1 in decresing order 255..254..253..>
-                int travelling = this.vbnv - genericStringToArray.length;
-                //////System.out.println("Travelling backwards for "+travelling);
-                int i = 0;
-                for (int x = this.vbnv - 1; x >= travelling; x--) {
-                    fixedDataCharsFromM1Index[i] = this.knightWalkNumberList.get(index)[x];
-                    //////System.out.println("From M1, positions" +fixedDataCharsFromM1Index[i] );
-                    i++;
+            int[] fixedDataCharsFromM1Index = new int[genericStringToArray.length];
+            int[] originalDataCharsM2Index = new int[genericStringToArray.length];
+            // place holders
+            StringBuffer cipherBuffer = new StringBuffer();
+            for (int index = 0; index < this.cipherTemplateList.size(); index++) {
+                //////System.out.println(" in M"+index+" orignal index of generic Data chars is as : ");
+                if (index == 0) {
+                    // take index from Knight tour matrix of M1 in decresing order 255..254..253..>
+                    int travelling = this.vbnv - genericStringToArray.length;
+                    //////System.out.println("Travelling backwards for "+travelling);
+                    int i = 0;
+                    for (int x = this.vbnv - 1; x >= travelling; x--) {
+                        fixedDataCharsFromM1Index[i] = this.knightWalkNumberList.get(index)[x];
+                        //////System.out.println("From M1, positions" +fixedDataCharsFromM1Index[i] );
+                        i++;
+                    }
                 }
-            }
-            for (int i = 0; i < genericStringToArray.length; i++) {
+                for (int i = 0; i < genericStringToArray.length; i++) {
 
-                // from m2, collect data chars position
-                for (int j = 0; j < this.cipherTemplateList.get(index).length; j++) {
-                    if (genericStringToArray[i] == this.cipherTemplateList.get(index)[j]) {
-                        if (index == 1) {
-                            originalDataCharsM2Index[i] = j;
-                            //////System.out.println("From M2, positions" + j);
+                    // from m2, collect data chars position
+                    for (int j = 0; j < this.cipherTemplateList.get(index).length; j++) {
+                        if (genericStringToArray[i] == this.cipherTemplateList.get(index)[j]) {
+                            if (index == 1) {
+                                originalDataCharsM2Index[i] = j;
+                                //////System.out.println("From M2, positions" + j);
+                            }
                         }
                     }
                 }
             }
-        }
         /* Add both Indices from M1 and M2 cipher templates
            if result is more tahn 255 , sutract 255 from it that will give new index
         */
-        int[] dataCharsFinalIndex = new int[genericStringToArray.length];
-        for (int pos = 0; pos < genericStringToArray.length; pos++) {
-            //////System.out.println("Adding index values" + fixedDataCharsFromM1Index[pos]+ " and " + originalDataCharsM2Index[pos]);
-            dataCharsFinalIndex[pos] = fixedDataCharsFromM1Index[pos] + originalDataCharsM2Index[pos];
-            if (dataCharsFinalIndex[pos] >= this.ASDwead) {
-                dataCharsFinalIndex[pos] = dataCharsFinalIndex[pos] - this.ASDwead;
+            int[] dataCharsFinalIndex = new int[genericStringToArray.length];
+            for (int pos = 0; pos < genericStringToArray.length; pos++) {
+                //////System.out.println("Adding index values" + fixedDataCharsFromM1Index[pos]+ " and " + originalDataCharsM2Index[pos]);
+                dataCharsFinalIndex[pos] = fixedDataCharsFromM1Index[pos] + originalDataCharsM2Index[pos];
+                if (dataCharsFinalIndex[pos] >= this.ASDwead) {
+                    dataCharsFinalIndex[pos] = dataCharsFinalIndex[pos] - this.ASDwead;
+                }
+                //////System.out.println("Final Index = "+ dataCharsFinalIndex[pos]);
+                cipherBuffer.append(this.cipherTemplateList.get(1)[dataCharsFinalIndex[pos]]);
             }
-            //////System.out.println("Final Index = "+ dataCharsFinalIndex[pos]);
-            cipherBuffer.append(this.cipherTemplateList.get(1)[dataCharsFinalIndex[pos]]);
+            //////System.out.println("Encrypted PIN=" + cipherBuffer);
+            // add knights tour as chars from reverse ST
+            for (int i = 0; i < this.knightMoveNumbers.length; i++) {
+                cipherBuffer.append(AllCharacter.getInstance().getCharacterReverseArray()[this.knightMoveNumbers[i]]);
+                //////System.out.println(this.knightMoveNumbers[i] + ",");
+            }
+            //////System.out.println("Final Encrypted Data=" + cipherBuffer);
+            return cipherBuffer.toString();
+        }catch (Exception e){
+            return new CipherControl().encryptGenericData(genericString);
         }
-        //////System.out.println("Encrypted PIN=" + cipherBuffer);
-        // add knights tour as chars from reverse ST
-        for (int i = 0; i < this.knightMoveNumbers.length; i++) {
-            cipherBuffer.append(AllCharacter.getInstance().getCharacterReverseArray()[this.knightMoveNumbers[i]]);
-            //////System.out.println(this.knightMoveNumbers[i] + ",");
-        }
-        //////System.out.println("Final Encrypted Data=" + cipherBuffer);
-        return cipherBuffer.toString();
     }
     public String encryptGenericData(String genericString, String salt) {
         char[] genericStringToArray = genericString.toCharArray();
@@ -989,7 +975,7 @@ public class CipherControl {
         // Creating new character array using knight moves and store in ciperTemplateStore
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] genericStringCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            this.printCipherTemplate(genericStringCipherChars);
+            //this.printCipherTemplate(genericStringCipherChars);
             this.createCipherTemplateStore(genericStringCipherChars);
         }
         /*
@@ -1053,6 +1039,26 @@ public class CipherControl {
         //////System.out.println("Final Encrypted Data=" + cipherBuffer);
         String buff=cipherBuffer.toString();
         return new String(xorWithKey(buff.getBytes(StandardCharsets.UTF_8),salt.getBytes(StandardCharsets.UTF_8)),StandardCharsets.UTF_8);
+    }
+
+    public String encryptLargeText(String data){
+        if(data.length()>256){
+            String chunks[]=data.split("(?<=\\G.{256})");
+            String encryptedChunks[]=new String[chunks.length];
+            for(int i=0;i<chunks.length;i++){
+                encryptedChunks[i]=encryptGenericData(chunks[i]);
+            }
+            return String.join(String.valueOf(UNI_GLO), encryptedChunks);
+        }
+        return encryptGenericData(data);
+    }
+    public String decryptLargeText(String data){
+        String chunks[]=data.split(String.valueOf(UNI_GLO));
+        String decryptedChunks[]=new String[chunks.length];
+        for(int i=0;i<chunks.length;i++){
+            decryptedChunks[i]=decryptGenericData(chunks[i]);
+        }
+        return String.join("", decryptedChunks);
     }
 
     public String decryptGenericData(String encodedData, String salt) {
@@ -1297,7 +1303,7 @@ public class CipherControl {
         // Creating new character array using knight moves and store in ciperTemplateStore
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] currentCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            this.printCipherTemplate(currentCipherChars);
+            //this.printCipherTemplate(currentCipherChars);
             this.createCipherTemplateStore(currentCipherChars);
         }
         /*
@@ -1516,7 +1522,7 @@ public class CipherControl {
         // Creating new character array using knight moves and store in ciperTemplateStore
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] currentCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            this.printCipherTemplate(currentCipherChars);
+            //this.printCipherTemplate(currentCipherChars);
             this.createCipherTemplateStore(currentCipherChars);
         }
         /*
@@ -2061,7 +2067,7 @@ public class CipherControl {
         // Creating new character array using knight moves and store in ciperTemplateStore
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] currentCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            this.printCipherTemplate(currentCipherChars);
+            //this.printCipherTemplate(currentCipherChars);
             this.createCipherTemplateStore(currentCipherChars);
         }
         /*
@@ -2151,7 +2157,7 @@ public class CipherControl {
         }
         for (int index = 0; index < this.knightWalkNumberList.size(); index++) {
             char[] currentCipherChars = this.createCipherTemplate(this.knightWalkNumberList.get(index));
-            //this.printCipherTemplate(currentCipherChars);
+            ////this.printCipherTemplate(currentCipherChars);
             this.createCipherTemplateStore(currentCipherChars);
         }
         /*

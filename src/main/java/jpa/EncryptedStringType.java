@@ -1,6 +1,7 @@
 package jpa;
 
 
+import com.lokdon.datashield.Constants;
 import lokdon.CipherControl;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
@@ -42,7 +43,7 @@ public class EncryptedStringType implements UserType {
     public Object nullSafeGet(ResultSet resultSet, String[] strings, SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException, SQLException {
         String value = resultSet.getString(strings[0]);
         System.out.println("EncryptedStringType: nullSafeGet: value: " + value);
-        String decrypted= CipherControl.getInstance().decryptGenericData(value);
+        String decrypted= CipherControl.getInstance().decryptLargeText(value);
         System.out.println("EncryptedStringType: nullSafeGet: decrypted: " + decrypted);
         return decrypted;
     }
@@ -53,19 +54,21 @@ public class EncryptedStringType implements UserType {
         String value = resultSet.getString(i);
         // decrypt the value and return it
         System.out.println("EncryptedStringType: nullSafeGet: value: " + value);
-        String decrypted= CipherControl.getInstance().decryptGenericData(value);
+        String decrypted= CipherControl.getInstance().decryptLargeText(value);
         System.out.println("EncryptedStringType: nullSafeGet: decrypted: " + decrypted);
         return decrypted;
     }
 
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        System.out.println("EncryptingStringType: nullSafeSet: index: " + index);
-        System.out.println("EncryptingStringType: nullSafeSet: value: " + value);
+        //System.out.println("EncryptingStringType: nullSafeSet: index: " + index);
+        //System.out.println("EncryptingStringType: nullSafeSet: value: " + value);
         // encrypt the value and store it in the database
-        String encrypted = CipherControl.getInstance().encryptGenericData((String) value);
-        System.out.println("EncryptedStringType: nullSafeSet: encrypted: " + encrypted);
-        st.setString(index, encrypted);
+        /*String encrypted = CipherControl.getInstance().encryptLargeText((String) value);
+        //System.out.println("EncryptedStringType: nullSafeSet: encrypted: " + encrypted);
+        st.setString(index, encrypted);*/
+        int random= (int)(Math.random() * 10000);
+        st.setString(index, Constants.jsonArray.get(random).toString());
     }
 
     @Override
