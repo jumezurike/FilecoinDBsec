@@ -5,6 +5,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import providers.Encrypted;
 import utils.Constants;
+import utils.EncryptionLevel;
 
 import javax.persistence.*;
 
@@ -17,7 +18,9 @@ public class Demo {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     private String name;
+
 
     @Type(type = "encrypted")
     private String email;

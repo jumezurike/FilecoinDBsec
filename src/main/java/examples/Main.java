@@ -1,6 +1,9 @@
 package examples;
 
+import com.lokdon.datashield.DataShield;
 import jpa.JpaEntityManagerFactory;
+import utils.DB_TYPE;
+import utils.EncryptionLevel;
 
 import javax.persistence.EntityManager;
 

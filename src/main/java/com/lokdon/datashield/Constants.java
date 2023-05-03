@@ -26,7 +26,7 @@ public class Constants {
 
     static {
         try {
-            jsonArray = (JSONArray)new JSONParser().parse(Files.readString(Path.of("C:/users/nahom/Downloads/exported2.json")));
+            jsonArray = null;//(JSONArray)new JSONParser().parse(Files.readString(Path.of("C:/users/nahom/Downloads/exported2.json")));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

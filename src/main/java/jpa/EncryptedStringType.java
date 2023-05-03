@@ -64,11 +64,9 @@ public class EncryptedStringType implements UserType {
         //System.out.println("EncryptingStringType: nullSafeSet: index: " + index);
         //System.out.println("EncryptingStringType: nullSafeSet: value: " + value);
         // encrypt the value and store it in the database
-        /*String encrypted = CipherControl.getInstance().encryptLargeText((String) value);
+        String encrypted = CipherControl.getInstance().encryptLargeText((String) value);
         //System.out.println("EncryptedStringType: nullSafeSet: encrypted: " + encrypted);
-        st.setString(index, encrypted);*/
-        int random= (int)(Math.random() * 10000);
-        st.setString(index, Constants.jsonArray.get(random).toString());
+        st.setString(index, encrypted);
     }
 
     @Override

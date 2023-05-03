@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78284d90-b28e-44d8-9c27-1cd0fcf6f244" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ci_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mock3.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DB_TYPE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/DataShield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/DataShield.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/examples/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/examples/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jpa/EncryptedStringType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/EncryptedStringType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/JpaEntityManagerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/JpaEntityManagerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lokdon/CipherControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lokdon/CipherControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lokdon/FileEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lokdon/FileEncryption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lokdon/KnightSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lokdon/KnightSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EntityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +99,10 @@
       <workItem from="1682894122999" duration="13659000" />
       <workItem from="1682932982322" duration="13899000" />
       <workItem from="1682987869743" duration="5612000" />
-      <workItem from="1683015359869" duration="942000" />
+      <workItem from="1683015359869" duration="2350000" />
+      <workItem from="1683033004401" duration="2227000" />
+      <workItem from="1683055116263" duration="4175000" />
+      <workItem from="1683121509948" duration="380000" />
     </task>
     <servers />
   </component>
