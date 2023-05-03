@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78284d90-b28e-44d8-9c27-1cd0fcf6f244" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lokdon/datashield/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/EncryptedStringType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/EncryptedStringType.java" afterDir="false" />
-    </list>
+    <list default="true" id="78284d90-b28e-44d8-9c27-1cd0fcf6f244" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +96,7 @@
       <workItem from="1683015359869" duration="2350000" />
       <workItem from="1683033004401" duration="2227000" />
       <workItem from="1683055116263" duration="4175000" />
-      <workItem from="1683121509948" duration="380000" />
+      <workItem from="1683121509948" duration="728000" />
     </task>
     <servers />
   </component>
